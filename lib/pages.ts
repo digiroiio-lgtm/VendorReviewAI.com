@@ -81,6 +81,36 @@ export const pages = {
     breadcrumb: "Use Cases",
     about: ["AI vendor review use cases", "Third-party risk automation", "Procurement due diligence"],
   },
+  vendorReviewSoftware: {
+    path: "/vendor-review-software",
+    title: "Vendor Review Software: Features, Workflow & Evaluation",
+    description:
+      "Learn what vendor review software does, which features buyers evaluate, how AI assists review workflows and where human oversight still matters.",
+    h1: "Vendor Review Software: What It Does and How to Evaluate It",
+    navLabel: "Vendor Review Software",
+    breadcrumb: "Vendor Review Software",
+    about: ["Vendor review software", "Vendor review workflow", "AI-assisted vendor review"],
+  },
+  vendorRiskAssessmentSoftware: {
+    path: "/vendor-risk-assessment-software",
+    title: "Vendor Risk Assessment Software: Capabilities & Criteria",
+    description:
+      "Understand vendor risk assessment software: risk tiering, questionnaires, evidence, remediation tracking, AI assistance and how to evaluate the category.",
+    h1: "Vendor Risk Assessment Software: Capabilities Buyers Evaluate",
+    navLabel: "Vendor Risk Assessment Software",
+    breadcrumb: "Vendor Risk Assessment Software",
+    about: ["Vendor risk assessment software", "Inherent risk", "Residual risk"],
+  },
+  thirdPartyRiskManagementSoftware: {
+    path: "/third-party-risk-management-software",
+    title: "Third-Party Risk Management Software: Features & Criteria",
+    description:
+      "Explore third-party risk management software: lifecycle coverage, key capabilities, AI assistance, limitations and criteria for evaluating the category.",
+    h1: "Third-Party Risk Management Software: Scope, Features and Evaluation Criteria",
+    navLabel: "Third-Party Risk Management Software",
+    breadcrumb: "Third-Party Risk Management Software",
+    about: ["Third-party risk management software", "Third-party risk management", "Vendor lifecycle"],
+  },
 } as const satisfies Record<string, PageConfig>;
 
 export type PageKey = keyof typeof pages;

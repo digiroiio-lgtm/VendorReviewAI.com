@@ -55,6 +55,8 @@ export default function VendorReviewChecklistPage() {
           The checklist is a starting point, not a standard or a guarantee. Applicable requirements depend on the
           vendor, the data and the buyer’s sector and jurisdiction. See the{" "}
           <Link href={pages.vendorRiskAssessment.path}>vendor risk assessment framework</Link> for how to scope depth.
+          The checklist can also serve as the requirements list when evaluating{" "}
+          <Link href={pages.vendorReviewSoftware.path}>vendor review software</Link>.
         </p>
       </ArticleSection>
 

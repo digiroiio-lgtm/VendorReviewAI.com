@@ -100,6 +100,8 @@ export default function UseCasesPage() {
           Before choosing a task, write the criteria using the{" "}
           <Link href={pages.vendorReviewChecklist.path}>vendor review checklist</Link>, and review the{" "}
           <Link href={`${pages.aiVendorReview.path}#risks-and-limitations`}>risks and limitations of AI vendor review</Link>.
+          For lifecycle-level tooling across these scenarios, see{" "}
+          <Link href={pages.thirdPartyRiskManagementSoftware.path}>third-party risk management software</Link>.
         </p>
       </ArticleSection>
 

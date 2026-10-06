@@ -230,6 +230,12 @@ export default function AiVendorReviewPage() {
           <li>Who verifies outputs, and who approves the final decision?</li>
           <li>What happens when evidence is missing, outdated or ambiguous?</li>
         </ul>
+        <p>
+          These questions also apply when AI is built into a product. The guides to{" "}
+          <Link href={pages.vendorReviewSoftware.path}>vendor review software</Link> and{" "}
+          <Link href={pages.vendorRiskAssessmentSoftware.path}>vendor risk assessment software</Link> turn them into
+          evaluation criteria.
+        </p>
       </ArticleSection>
 
       <FAQ

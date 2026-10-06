@@ -120,7 +120,8 @@ export default function HomePage() {
         <p>
           AI assistance typically applies to the Evidence, Review and Findings steps. The Decision step stays with
           people. The <Link href={pages.vendorReviewChecklist.path}>vendor review checklist</Link> turns these steps into
-          concrete questions and evidence requests.
+          concrete questions and evidence requests. Teams that want to run the workflow in a system can see what{" "}
+          <Link href={pages.vendorReviewSoftware.path}>vendor review software</Link> typically covers.
         </p>
       </ArticleSection>
 
@@ -143,7 +144,9 @@ export default function HomePage() {
         />
         <p>
           The <Link href={pages.vendorRiskAssessment.path}>vendor risk assessment guide</Link> defines each category and
-          explains inherent risk, residual risk, remediation and monitoring.
+          explains inherent risk, residual risk, remediation and monitoring. The tooling side of that analysis is
+          described in the guide to{" "}
+          <Link href={pages.vendorRiskAssessmentSoftware.path}>vendor risk assessment software</Link>.
         </p>
       </ArticleSection>
 
@@ -190,6 +193,12 @@ export default function HomePage() {
             { label: "Final approval", cells: ["Should not make the final decision.", "Risk, legal, security, privacy or procurement owners decide under internal policy."] },
           ]}
         />
+        <p>
+          For buyers comparing tools, the software guides explain the categories and evaluation criteria:{" "}
+          <Link href={pages.vendorReviewSoftware.path}>vendor review</Link>,{" "}
+          <Link href={pages.vendorRiskAssessmentSoftware.path}>risk assessment</Link> and{" "}
+          <Link href={pages.thirdPartyRiskManagementSoftware.path}>third-party risk management</Link> software.
+        </p>
       </ArticleSection>
 
       <ArticleSection id="evidence-reviewed" title="What Evidence Is Usually Reviewed?">

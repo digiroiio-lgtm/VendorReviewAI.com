@@ -50,7 +50,9 @@ export default function VendorRiskAssessmentPage() {
           management practices, particularly for cybersecurity.
         </p>
         <p>
-          This page deliberately avoids a scoring formula. Scoring models are specific to each organization’s risk
+          Organizations that manage assessments in a system can compare{" "}
+          <Link href={pages.vendorRiskAssessmentSoftware.path}>vendor risk assessment software</Link> against this
+          framework. This page deliberately avoids a scoring formula. Scoring models are specific to each organization’s risk
           appetite, data and regulatory context, and a generic formula can suggest precision that does not exist.
         </p>
       </ArticleSection>

@@ -157,7 +157,9 @@ export default function WhatIsVendorReviewPage() {
           A TPRM program usually covers a vendor inventory, risk tiering, policies, reviews, issue tracking, monitoring
           and offboarding. Vendor review is the point in that lifecycle where evidence is examined and a decision is
           made. Guidance such as <Cite source="nist80016">NIST SP 800-161 Rev. 1</Cite> describes supply chain risk
-          management at the program level, and vendor reviews supply the vendor-level evidence that such a program needs.
+          management at the program level, and vendor reviews supply the vendor-level evidence that such a program needs. Platforms that support the whole
+          program are described in the guide to{" "}
+          <Link href={pages.thirdPartyRiskManagementSoftware.path}>third-party risk management software</Link>.
         </p>
       </ArticleSection>
 
@@ -202,7 +204,9 @@ export default function WhatIsVendorReviewPage() {
           not describe a real vendor.
         </p>
         <p>
-          AI can assist with the analysis and findings steps by extracting facts and flagging gaps. Read{" "}
+          Some teams manage this process in a dedicated system; see what{" "}
+          <Link href={pages.vendorReviewSoftware.path}>vendor review software</Link> typically does. AI can assist with
+          the analysis and findings steps by extracting facts and flagging gaps. Read{" "}
           <Link href={pages.aiVendorReview.path}>how AI-assisted vendor review works</Link> for the boundaries.
         </p>
       </ArticleSection>

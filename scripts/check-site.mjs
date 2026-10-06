@@ -45,6 +45,9 @@ const EXPECTED = [
   "/vendor-risk-assessment",
   "/vendor-review-checklist",
   "/use-cases",
+  "/vendor-review-software",
+  "/vendor-risk-assessment-software",
+  "/third-party-risk-management-software",
   "/domain",
 ];
 for (const r of EXPECTED) if (!pages.has(r)) fail(r, "route was not prerendered");
@@ -112,6 +115,13 @@ for (const [route, html] of pages) {
     prev = h.level;
   }
 
+  // no product / service / lead-gen claims (these pages are category resources)
+  const mainText = text(html.match(/<main[\s\S]*<\/main>/)?.[0] ?? "").toLowerCase();
+  for (const phrase of ["our software", "our platform", "our product", "our solution", "book a demo", "request a demo", "start free", "free trial", "sign up", "get started", "get a quote", "pricing"]) {
+    if (mainText.includes(phrase)) fail(route, `contains banned phrase "${phrase}"`);
+  }
+  if (/"@type":"(Product|SoftwareApplication|Offer|AggregateRating|Review)"/.test(html)) fail(route, "contains unsupported schema type");
+
   // sitewide banner + landmarks
   if (!html.includes("sale-banner")) fail(route, "domain sale banner missing");
   if (!html.includes("This domain is for sale")) fail(route, "mobile banner copy missing");
@@ -171,6 +181,21 @@ for (const [route, html] of pages) {
     }
     if (hash && pages.has(target) && !idsByRoute.get(target).has(hash)) fail(route, `broken anchor ${href}`);
   }
+}
+
+// Sitemap lists every indexable page and excludes /domain
+import { existsSync } from "node:fs";
+const sitemapFile = [".next/server/app/sitemap.xml.body", ".next/server/app/sitemap.xml"].find(existsSync);
+if (!sitemapFile) fail("sitemap", "sitemap output not found");
+else {
+  const xml = readFileSync(sitemapFile, "utf8");
+  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  for (const r of EXPECTED.filter((r) => r !== "/domain")) {
+    const url = r === "/" ? ORIGIN : ORIGIN + r;
+    if (!locs.includes(url)) fail("sitemap", `missing ${url}`);
+  }
+  if (locs.some((l) => l.endsWith("/domain"))) fail("sitemap", "contains /domain");
+  console.log(`  sitemap entries: ${locs.length}`);
 }
 
 // Every indexable page should be reachable from at least one other page.
